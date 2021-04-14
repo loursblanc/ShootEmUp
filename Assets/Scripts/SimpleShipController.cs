@@ -17,7 +17,7 @@ public class SimpleShipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if (UNITY_IOS || UNITY_ANDROID && !UNITY_EDITOR || REMOTE)
+#if (UNITY_IOS || UNITY_ANDROID) && !UNITY_EDITOR || REMOTE
     if(Input.touchCount > 0)
         {
             Touch t = Input.touches[0];
