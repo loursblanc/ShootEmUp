@@ -10,40 +10,45 @@ using UnityEngine;
 [AddComponentMenu ("Banquise/Transform Looper")]
 public class TransformLooper : MonoBehaviour
 {
-    public Rect area = new Rect(0,0,10,10);
+    //public Rect area = new Rect(0,0,10,10);
+    public GameArea gameArea;
+    private Vector3 areaSpacePosition;
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 position = transform.position;
+        //Vector3 position = transform.position;
 
-        if (area.Contains(position))
+        areaSpacePosition = gameArea.transform.InverseTransformPoint(transform.position);
+
+        if (gameArea.Area.Contains(areaSpacePosition))
             return;
-        
-        if (position.x < area.xMin)
+
+        if (areaSpacePosition.x < gameArea.Area.xMin)
         {
-            position.x = area.xMax;
+            areaSpacePosition.x = gameArea.Area.xMax;
         }
         else
         {
-            if (position.x > area.xMax)
+            if (areaSpacePosition.x > gameArea.Area.xMax)
             {
-                position.x= area.xMin;
+                areaSpacePosition.x= gameArea.Area.xMin;
             }
         }
 
 
-        if (position.y < area.yMin)
+        if (areaSpacePosition.y < gameArea.Area.yMin)
         {
-            position.y = area.yMax;
+            areaSpacePosition.y = gameArea.Area.yMax;
         }
         else
         {
-            if (position.y > area.yMax)
+            if (areaSpacePosition.y > gameArea.Area.yMax)
             {
-                position.y = area.yMin;
+                areaSpacePosition.y = gameArea.Area.yMin;
             }
         }
-        transform.position = position;
+        //transform.position = position;
+        transform.position = gameArea.transform.TransformPoint(areaSpacePosition);
     }
 }
