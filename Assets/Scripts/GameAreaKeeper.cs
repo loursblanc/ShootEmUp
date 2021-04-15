@@ -7,7 +7,7 @@ using UnityEngine;
  * Faire boucler la position de l'objet dans une zone rectangulaire
  * lorsque l'objet sort du bord droit, il revient a gauche.
  */
-[AddComponentMenu ("Banquise/Transform Looper")]
+[AddComponentMenu ("Banquise/Game Area Keeper")]
 public class GameAreaKeeper : MonoBehaviour
 {
     //public Rect area = new Rect(0,0,10,10);

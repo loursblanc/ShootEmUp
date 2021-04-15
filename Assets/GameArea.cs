@@ -10,22 +10,25 @@ using UnityEngine;
 [AddComponentMenu("Banquise/Game Area")]
 public class GameArea : MonoBehaviour
 {
-    private Rect _area = new Rect(0,0,10,10);
-    public Vector2 size;
+    [HideInInspector]
+    [SerializeField]
+    private  Rect _area = new Rect(0,0,10,10);
     public Color gizmoColor = new Color(0, 0, 1, 0.2f);
     private Color gizmoWireColor;
-
-    public Rect Area { get { return _area; } set{ _area = value; } }
-
    
-    public void SetArea(Vector2 size)
-    {
-        Area = new Rect(size.x * -0.5f, size.y * -0.5f,size.x, size.y);
-    }
+    public Rect Area { get { return _area; } set{ _area = value; } }
+    public Vector2 size;
+    public Vector2 Size { get { return Area.size; } set { Area = new Rect(value.x * -0.5f, value.y * -0.5f, value.x, value.y); } }
+
+    //public void SetArea(Vector2 size)
+    //{
+    //    Area = new Rect(size.x * -0.5f, size.y * -0.5f, size.x, size.y);
+    //}
 
     private void OnValidate()
     {
-        SetArea(size);
+        //SetArea(size);
+        Size = size;
         gizmoWireColor = new Color(gizmoColor.r, gizmoColor.g, gizmoColor.b,1);
 
     }
