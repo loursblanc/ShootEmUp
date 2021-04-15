@@ -16,11 +16,16 @@ public class FitAreaToCamera : MonoBehaviour
         get { return GetComponent<GameArea>(); }
     }
 
+    private void Awake()
+    {
+        FitToMainCamera();
+    }
+
     private void FitToCamera (Camera cam)
     {
         //Area.SetArea(new Vector2 (cam.aspect * cam.orthographicSize * 2, cam.orthographicSize * 2));
         Area.Size = new Vector2 (cam.aspect * cam.orthographicSize * 2, cam.orthographicSize * 2);
-        transform.position = cam.transform.position;
+        transform.position = (Vector2)cam.transform.position;
         transform.rotation = cam.transform.rotation;
     }
 
@@ -34,9 +39,5 @@ public class FitAreaToCamera : MonoBehaviour
         FitToMainCamera();
     }
 
-    private void Awake()
-    {
-        FitToMainCamera();
-
-    }
+  
 }

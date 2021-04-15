@@ -41,4 +41,14 @@ public class GameArea : MonoBehaviour
         Gizmos.color = gizmoWireColor;
         Gizmos.DrawWireCube(new Vector3(Area.center.x, Area.center.y, 0), new Vector3(Area.width, Area.height, 0));
     }
+
+    public Vector3 GetRandomPosition()
+    {
+        Vector3 vector3 = Vector3.zero;
+        vector3.x = Random.Range(Area.xMin, Area.xMax);
+        vector3.y = Random.Range(Area.yMin, Area.yMax);
+        vector3 = transform.TransformPoint(vector3);
+        return vector3;
+
+    }
 }

@@ -237,12 +237,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _area:
     serializedVersion: 2
-    x: -5
-    y: -5
-    width: 10
-    height: 10
+    x: -8.5
+    y: -6
+    width: 17
+    height: 12
   gizmoColor: {r: 0, g: 0, b: 1, a: 0.33333334}
-  size: {x: 10, y: 10}
+  size: {x: 17, y: 12}
 --- !u!4 &147873213
 Transform:
   m_ObjectHideFlags: 0
@@ -516,6 +516,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1297670731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1297670733}
+  - component: {fileID: 1297670732}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1297670732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297670731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43edd793e823247478d361ffed18d7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reference: {fileID: 1596897840}
+  minrate: 0.5
+  maxrate: 5
+  number: 5
+  infinite: 0
+  area: {fileID: 147873212}
+--- !u!4 &1297670733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297670731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.73, y: 8.59, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478481918
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +678,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1596897840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7774411241642923281, guid: 077a74f9c1301d742a0db8be3e6c8a67, type: 3}
+  m_PrefabInstance: {fileID: 7774411241892878189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687806277
 GameObject:
   m_ObjectHideFlags: 0
