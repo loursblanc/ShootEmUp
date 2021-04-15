@@ -8,7 +8,7 @@ using UnityEngine;
  * lorsque l'objet sort du bord droit, il revient a gauche.
  */
 [AddComponentMenu ("Banquise/Transform Looper")]
-public class TransformLooper : MonoBehaviour
+public class GameAreaKeeper : MonoBehaviour
 {
     //public Rect area = new Rect(0,0,10,10);
     public GameArea gameArea;
@@ -27,12 +27,12 @@ public class TransformLooper : MonoBehaviour
         if (areaSpacePosition.x < gameArea.Area.xMin)
         {
             areaSpacePosition.x = gameArea.Area.xMax;
-        }
-        else
+        }                                            
+        else                                         
         {
             if (areaSpacePosition.x > gameArea.Area.xMax)
             {
-                areaSpacePosition.x= gameArea.Area.xMin;
+                areaSpacePosition.x = gameArea.Area.xMin;
             }
         }
 

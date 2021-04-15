@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Game Area;
+/// Define a Rectangular Game Area;
 /// </summary>
 
 
