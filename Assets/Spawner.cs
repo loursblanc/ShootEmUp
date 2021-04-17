@@ -19,7 +19,13 @@ public class Spawner : MonoBehaviour
     [Header("LOCATIONS")]
     public GameArea area;
     private Transform player;
-    public float minDistanceFromPlayer; 
+    public float minDistanceFromPlayer;
+
+    [Header("VELOCITY")]
+    [Range(-180f, 180f)] public float angle;
+    [Range(0f, 360f)]public float spread = 30f;
+    [Range(0, 10)] public float minStrength = 1f;
+    [Range(0, 10)] public float maxStrengh = 10f;
 
     // Start is called before the first frame update
     //void Start()
@@ -71,7 +77,19 @@ public class Spawner : MonoBehaviour
                 //Debug.Break();
             }
 
-            Instantiate(reference, _position, transform.rotation);
+            GameObject obj =  Instantiate(reference, _position, transform.rotation) as GameObject;
+            Rigidbody2D rb2d = obj.GetComponent<Rigidbody2D>();
+            if (rb2d)
+            {
+                float angleDelta = Random.Range(-spread * 0.5f, spread * 0.5f);
+                float angle_ = angle + angleDelta;
+                Vector2 direction = new Vector2(Mathf.Sin(Mathf.Deg2Rad*angle_), Mathf.Cos(Mathf.Deg2Rad*angle_));
+                direction *= Random.Range(minStrength, maxStrengh);
+                rb2d.velocity = direction;
+            }
+
+
+
             _remaining--;
 
             yield return new WaitForSeconds(1 / Random.Range(minrate,maxrate));
