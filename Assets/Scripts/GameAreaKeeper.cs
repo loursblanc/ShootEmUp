@@ -15,7 +15,7 @@ public class GameAreaKeeper : MonoBehaviour
     private Vector3 areaSpacePosition;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Vector3 position = transform.position;
 
