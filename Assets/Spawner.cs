@@ -18,6 +18,8 @@ public class Spawner : MonoBehaviour
 
     [Header("LOCATIONS")]
     public GameArea area;
+    private Transform player;
+    public float minDistanceFromPlayer; 
 
     // Start is called before the first frame update
     //void Start()
@@ -46,11 +48,29 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator Start()
     {
+        if (minDistanceFromPlayer > 0) { 
+        GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+            if (playerGO)
+            {
+                player = playerGO.transform;
+            }else
+            {
+                Debug.LogWarning("No player found");
+            }
+        }
         _remaining = number;
         while (infinite || _remaining > 0)
         {
             //Vector3 _position = area.GetRandomPosition();
-            Vector3 _position = area ? area.GetRandomPosition() : transform.position; 
+            Vector3 _position = area ? area.GetRandomPosition() : transform.position;
+            if(player &&  Vector3.Distance(_position, player.position) < minDistanceFromPlayer){
+                Vector3 debugPos = _position; 
+                Debug.DrawLine(transform.position, debugPos);
+                _position = (_position - player.position).normalized * minDistanceFromPlayer;
+                Debug.DrawLine(debugPos, _position);
+                //Debug.Break();
+            }
+
             Instantiate(reference, _position, transform.rotation);
             _remaining--;
 

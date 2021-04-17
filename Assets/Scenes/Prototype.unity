@@ -546,11 +546,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 1596897840}
-  minrate: 0.5
+  minrate: 2
   maxrate: 5
   number: 5
-  infinite: 0
+  infinite: 1
   area: {fileID: 147873212}
+  minDistanceFromPlayer: 5
 --- !u!4 &1297670733
 Transform:
   m_ObjectHideFlags: 0
@@ -979,6 +980,10 @@ PrefabInstance:
     - target: {fileID: 4730358791777682755, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
       propertyPath: m_Name
       value: SpaceShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730358791777682755, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4730358791777682757, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
       propertyPath: m_RootOrder

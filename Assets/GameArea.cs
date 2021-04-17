@@ -12,11 +12,11 @@ public class GameArea : MonoBehaviour
 {
     [HideInInspector]
     [SerializeField]
-    private  Rect _area = new Rect(0,0,10,10);
+    private Rect _area = new Rect(0, 0, 10, 10);
     public Color gizmoColor = new Color(0, 0, 1, 0.2f);
     private Color gizmoWireColor;
-   
-    public Rect Area { get { return _area; } set{ _area = value; } }
+
+    public Rect Area { get { return _area; } set { _area = value; } }
     public Vector2 size;
     public Vector2 Size { get { return Area.size; } set { Area = new Rect(value.x * -0.5f, value.y * -0.5f, value.x, value.y); } }
 
@@ -29,7 +29,7 @@ public class GameArea : MonoBehaviour
     {
         //SetArea(size);
         Size = size;
-        gizmoWireColor = new Color(gizmoColor.r, gizmoColor.g, gizmoColor.b,1);
+        gizmoWireColor = new Color(gizmoColor.r, gizmoColor.g, gizmoColor.b, 1);
 
     }
 
@@ -51,4 +51,5 @@ public class GameArea : MonoBehaviour
         return vector3;
 
     }
+
 }
