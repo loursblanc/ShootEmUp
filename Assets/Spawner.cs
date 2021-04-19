@@ -27,6 +27,16 @@ public class Spawner : MonoBehaviour
     [Range(0, 10)] public float minStrength = 1f;
     [Range(0, 10)] public float maxStrengh = 10f;
 
+
+    [Header("ANIMATOR")]
+    public string animatorSpawningParameterName = "spawning";
+    private int spawningHashId;
+    public float animatorDelayIn = 1;
+    public float animatorDelayOut = 1;
+
+
+    private Animator animator;
+
     // Start is called before the first frame update
     //void Start()
     //{
@@ -52,8 +62,27 @@ public class Spawner : MonoBehaviour
     //        this.enabled = false;  
     //}
 
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        if (animator)
+        {
+            spawningHashId = Animator.StringToHash(animatorSpawningParameterName);
+        }
+        
+    }
+
     private IEnumerator Start()
     {
+
+        if (animator)
+        {
+            animator.SetBool(animatorSpawningParameterName, true);
+            yield return new WaitForSeconds(animatorDelayIn);
+        }
+        _remaining = number;
+
         if (minDistanceFromPlayer > 0) { 
         GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
             if (playerGO)
@@ -64,7 +93,7 @@ public class Spawner : MonoBehaviour
                 Debug.LogWarning("No player found");
             }
         }
-        _remaining = number;
+       
         while (infinite || _remaining > 0)
         {
             //Vector3 _position = area.GetRandomPosition();
@@ -88,11 +117,15 @@ public class Spawner : MonoBehaviour
                 rb2d.velocity = direction;
             }
 
-
-
             _remaining--;
 
             yield return new WaitForSeconds(1 / Random.Range(minrate,maxrate));
+        }
+        
+        if (animator)
+        {
+            yield return new WaitForSeconds(animatorDelayOut);
+            animator.SetBool(animatorSpawningParameterName, false);
         }
     }
 }
