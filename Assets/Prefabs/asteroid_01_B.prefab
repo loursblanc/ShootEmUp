@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7774411241642923282}
   - component: {fileID: 7774411241642923283}
   - component: {fileID: 7774411241642923280}
+  - component: {fileID: 1596897845}
+  - component: {fileID: 1596897844}
+  - component: {fileID: 1596897841}
   m_Layer: 0
   m_Name: asteroid_01_B
   m_TagString: Untagged
@@ -69,11 +72,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1741775993
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 896879918753499210, guid: d52d4e37a689c1241aaec2d6f59f11df, type: 3}
-  m_Color: {r: 0.7169812, g: 0.55259067, b: 0.40922037, a: 1}
+  m_Color: {r: 0.7176471, g: 0.6481286, b: 0.40784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,3 +105,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &1596897845
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774411241642923281}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 0.13854423
+  m_LinearDrag: 1
+  m_AngularDrag: 1
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &1596897844
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774411241642923281}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: d633013b9a2622b4f8d534c67381e93e, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.21
+--- !u!114 &1596897841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774411241642923281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7f171193be5d44da6872e1fc169d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameArea: {fileID: 0}
