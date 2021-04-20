@@ -205,6 +205,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &100227341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4730358791777682755, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+  m_PrefabInstance: {fileID: 4730358792476120768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &100227342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100227341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c151cdf2db320940af5f3d089edb1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &147873211
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +322,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.045167312, g: 0.045946058, b: 0.047169805, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 1
@@ -320,9 +337,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 1.499945
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 12.745614
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -659,16 +676,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 345290221474476527, guid: 2932b82c0b8c54b4d8a8a105bde3a727, type: 3}
-  minrate: 0.1
-  maxrate: 0.5
+  minRate: 1
+  maxRate: 1
   number: 5
   infinite: 0
-  area: {fileID: 0}
+  area: {fileID: 147873212}
   minDistanceFromPlayer: 2
   angle: 108
   spread: 30
   minStrength: 1
-  maxStrengh: 10
+  maxStrength: 10
   animatorSpawningParameterName: spawning
   animatorDelayIn: 1
   animatorDelayOut: 1
@@ -680,7 +697,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625754532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 7.37, z: -1.7996714}
+  m_LocalPosition: {x: 3, y: 7.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -959,9 +976,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1741775993
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -196763260554461077, guid: a60c5e1426333bd4d8b4519814088b1c, type: 3}
   m_Color: {r: 0.122641504, g: 0.11512104, b: 0.11512104, a: 0}
   m_FlipX: 0
@@ -1001,6 +1018,18 @@ PrefabInstance:
     - target: {fileID: 4730358791777682755, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
       propertyPath: m_Name
       value: SpaceShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730358791777682756, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730358791777682756, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730358791777682756, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1741775993
       objectReference: {fileID: 0}
     - target: {fileID: 4730358791777682757, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
       propertyPath: m_RootOrder

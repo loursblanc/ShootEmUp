@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 345290221474476520}
   - component: {fileID: 345290221474476523}
   - component: {fileID: 345290221474476522}
+  - component: {fileID: -3282863403024690319}
   m_Layer: 0
   m_Name: Black Hole
   m_TagString: Untagged
@@ -46,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 7774411241642923281, guid: 077a74f9c1301d742a0db8be3e6c8a67, type: 3}
-  minrate: 0.5
-  maxrate: 1
+  minRate: 1
+  maxRate: 1
   number: 5
   infinite: 0
   area: {fileID: 0}
@@ -55,7 +56,7 @@ MonoBehaviour:
   angle: 135
   spread: 30
   minStrength: 1
-  maxStrengh: 10
+  maxStrength: 10
   animatorSpawningParameterName: spawning
   animatorDelayIn: 3
   animatorDelayOut: 1
@@ -96,8 +97,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1741775993
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -196763260554461077, guid: a60c5e1426333bd4d8b4519814088b1c, type: 3}
   m_Color: {r: 0.122641504, g: 0.11512104, b: 0.11512104, a: 0}
@@ -129,3 +130,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3282863403024690319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345290221474476527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c151cdf2db320940af5f3d089edb1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
