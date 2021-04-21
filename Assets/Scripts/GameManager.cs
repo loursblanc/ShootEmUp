@@ -6,7 +6,7 @@ using UnityEngine;
 {
     const float maxDamage = 100;
     static private float _damage;
-
+    static private int _lives;
     static public float Damage
     {
         get { return _damage; }
@@ -22,6 +22,22 @@ using UnityEngine;
                     _damage = 0; 
                 }
                 Debug.Log("Damage : " + _damage);
+            }
+        }
+    }
+    static public int Lives
+    {
+        get { return _lives; }
+        set
+        {
+            if (value != _lives)
+            {
+                _lives = value;
+                if (_lives <= 0) {
+                    // TODO : Handle gameOver
+                }
+
+
             }
         }
     }
