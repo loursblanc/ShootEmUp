@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1772180358}
   - component: {fileID: 1772180356}
   - component: {fileID: 1772180357}
+  - component: {fileID: -3232424051589305423}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Player
@@ -193,6 +194,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameArea: {fileID: 0}
+--- !u!114 &-3232424051589305423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4730358791777682755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c151cdf2db320940af5f3d089edb1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4730358792484963959
 GameObject:
   m_ObjectHideFlags: 0
