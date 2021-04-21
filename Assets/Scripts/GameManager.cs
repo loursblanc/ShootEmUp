@@ -6,7 +6,7 @@ using UnityEngine;
 {
     const float maxDamage = 100;
     static private float _damage;
-    static private int _lives;
+    static private int _lives =0;
     static public float Damage
     {
         get { return _damage; }
@@ -18,7 +18,7 @@ using UnityEngine;
 
                 if (_damage >= maxDamage)
                 {
-                    //TODO :  Lives --
+                    Lives--;
                     _damage = 0; 
                 }
                 Debug.Log("Damage : " + _damage);
