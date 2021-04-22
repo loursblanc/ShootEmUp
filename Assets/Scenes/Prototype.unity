@@ -205,24 +205,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &100227341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4730358791777682755, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
-  m_PrefabInstance: {fileID: 4730358792476120768}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &100227342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100227341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c151cdf2db320940af5f3d089edb1f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vulnerability: 1
 --- !u!1 &147873211
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +352,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &892367009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 892367009, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+  m_PrefabInstance: {fileID: 4730358792476120768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &945740875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1068,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1548446467 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1548446467, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+  m_PrefabInstance: {fileID: 4730358792476120768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625754532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,29 +1438,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -3232424051589305423, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
-      propertyPath: vulnerability
-      value: 50
+    - target: {fileID: 130406413, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+      propertyPath: firingRate
+      value: 6.8
       objectReference: {fileID: 0}
-    - target: {fileID: 1772180357, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
-      propertyPath: gameArea
+    - target: {fileID: 130406413, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+      propertyPath: firingRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 130406413, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+      propertyPath: emmiters.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 892367009}
+    - target: {fileID: 130406413, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
+      propertyPath: emmiters.Array.data[1]
+      value: 
+      objectReference: {fileID: 1548446467}
     - target: {fileID: 4730358791777682755, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
       propertyPath: m_Name
       value: SpaceShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730358791777682756, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730358791777682756, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730358791777682756, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1741775993
       objectReference: {fileID: 0}
     - target: {fileID: 4730358791777682757, guid: 55f8e74da379fe848bc53ae8ad8aec19, type: 3}
       propertyPath: m_RootOrder
