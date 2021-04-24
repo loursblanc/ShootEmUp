@@ -14,6 +14,13 @@ public class GameUI : MonoBehaviour
     public Color damageSliderColorMin = Color.yellow;
     public Color damageSliderColorMax = Color.red;
 
+    [Header("NAV")]
+    public Text gameStateText;
+    public Button pauseButton;
+    public Button resumeButton;
+    public Image pauseMenu;
+
+
     private void Awake()
     {
         _damageFillArea = damageSlider.fillRect.GetComponent<Image>();
@@ -23,7 +30,9 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        livesText.text = string.Format("{0} : {01}",GameManager.Lives > 1 ? "Lives" : "Life", GameManager.Lives);
+        GameManager.Lives = 1;
+
+        livesText.text = string.Format("{1} {0}",GameManager.Lives > 1 ? "Lives" : "Life", GameManager.Lives);
         scoreText.text = string.Format("Score : {0}", GameManager.Score);
         highScoreText.text = string.Format("High Score : {0}", GameManager.HighScore);
         damageSlider.value = GameManager.Damage;
@@ -41,7 +50,7 @@ public class GameUI : MonoBehaviour
 
         GameManager.livesChanged += delegate (int lives)
             {
-                livesText.text = string.Format("{0} : {01}", lives > 1 ? "Lives" : "Life", lives);
+                livesText.text = string.Format("{1} {0}", lives > 1 ? "Lives" : "Life", lives);
             };
 
         GameManager.DamageChanged += delegate (float damage)
@@ -49,10 +58,26 @@ public class GameUI : MonoBehaviour
                 damageSlider.value = damage;
                 _damageFillArea.color = Color.Lerp(damageSliderColorMin, damageSliderColorMax, damage/damageSlider.maxValue); 
             };
+
+        GameManager.StateChanged += delegate (GameManager.STATE state)
+            {
+                gameStateText.text = string.Format("Game {0}", state.ToString().ToUpper());
+                pauseButton.gameObject.SetActive(state != GameManager.STATE.Pause);
+                pauseMenu.gameObject.SetActive(state != GameManager.STATE.Running);
+                resumeButton.gameObject.SetActive(state != GameManager.STATE.Over);
+            };
     }
 
 
+    public void PauseGame()
+    {
+        GameManager.State = GameManager.STATE.Pause;
+    }
 
+    public void ResumeGame()
+    {
+        GameManager.State = GameManager.STATE.Running;
+    }
     //private void OnScoreChanged(int score)
     //{
     // scoreText.text = string.Format("Score : {0}", GameManager.Score);
