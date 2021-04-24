@@ -31,6 +31,7 @@ public class GameUI : MonoBehaviour
     private void Start()
     {
         GameManager.Lives = 1;
+        OnStateChanged(GameManager.State);
 
         livesText.text = string.Format("{1} {0}",GameManager.Lives > 1 ? "Lives" : "Life", GameManager.Lives);
         scoreText.text = string.Format("Score : {0}", GameManager.Score);
@@ -59,13 +60,7 @@ public class GameUI : MonoBehaviour
                 _damageFillArea.color = Color.Lerp(damageSliderColorMin, damageSliderColorMax, damage/damageSlider.maxValue); 
             };
 
-        GameManager.StateChanged += delegate (GameManager.STATE state)
-            {
-                gameStateText.text = string.Format("Game {0}", state.ToString().ToUpper());
-                pauseButton.gameObject.SetActive(state != GameManager.STATE.Pause);
-                pauseMenu.gameObject.SetActive(state != GameManager.STATE.Running);
-                resumeButton.gameObject.SetActive(state != GameManager.STATE.Over);
-            };
+        GameManager.StateChanged += OnStateChanged;
     }
 
 
@@ -83,10 +78,14 @@ public class GameUI : MonoBehaviour
     // scoreText.text = string.Format("Score : {0}", GameManager.Score);
     //}
 
-
-
-
-
-
-
+    private void OnStateChanged(GameManager.STATE state)
+    {
+        gameStateText.text = string.Format("Game {0}", state.ToString().ToUpper());
+        pauseButton.gameObject.SetActive(state == GameManager.STATE.Running);
+        pauseMenu.gameObject.SetActive(state != GameManager.STATE.Running);
+        resumeButton.gameObject.SetActive(state != GameManager.STATE.Over);
+    }
 }
+
+   
+
