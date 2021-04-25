@@ -80,7 +80,6 @@ public class GameUI : MonoBehaviour
         GameManager.StateChanged += OnStateChanged;
     }
 
-
     public void PauseGame()
     {
         GameManager.State = GameManager.STATE.Pause;
@@ -90,10 +89,17 @@ public class GameUI : MonoBehaviour
     {
         GameManager.State = GameManager.STATE.Running;
     }
+
+    public void RestartGame()
+    {
+        GameManager.Restart(); 
+    }
     //private void OnScoreChanged(int score)
     //{
     // scoreText.text = string.Format("Score : {0}", GameManager.Score);
     //}
+
+
 
     private void OnStateChanged(GameManager.STATE state)
     {
