@@ -20,11 +20,28 @@ public class GameUI : MonoBehaviour
     public Button resumeButton;
     public Image pauseMenu;
 
+    [Header("Settings")]
+    public Slider musicVolumeSlider;
+    public Slider SFXVolumeSlider;
+
+    public float MusicVolume
+    {
+        get { return PlayersSettings.MusicVolume; }
+        set { PlayersSettings.MusicVolume = value; }
+    }
+    public float SFXVolume
+    {
+        get { return PlayersSettings.SFXVolume; }
+        set { PlayersSettings.SFXVolume = value; }
+    }
 
     private void Awake()
     {
         _damageFillArea = damageSlider.fillRect.GetComponent<Image>();
         damageSlider.maxValue = GameManager.maxDamage;
+
+        musicVolumeSlider.value = MusicVolume;
+        SFXVolumeSlider.value = SFXVolume;
     }
 
 
